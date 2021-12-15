@@ -1,0 +1,137 @@
+- 프로젝트 리스트업
+
+- 프로젝트 폴더 열기
+
+- 프로젝트 최신으로 update (git pull) 
+
+- git log 확인
+	- 로그 message에 있는 퍼센티지 정보를 보고 progressbar에 표시 
+		- 규약 : 년.월.일.퍼센티지 메세지
+
+- 최신 여부 표시
+
+- git cmd 창 열기
+
+===================================
+- md 문법
+- git 명령어
+- linux 명령어
+
+==================================
+[git 저장소 초기화 및 config 설정]
+git init
+
+git config
+git config --global user.name "my name"
+git config --global user.email email
+git config --global commit.template .gitmessage.txt
+	-> touch .gitmessage.txt : .gitmessage.txt 파일 생성
+	-> vim .gitmessage.txt : .gitmessage.txt 파일 내용 작성
+    -> git commit 만 하면 vim으로 작성하도록 나옴
+	-> 나중에 github를 확인하면 잘 지정되서 나옴
+    -> https://velog.io/@bky373/Git-%EC%BB%A4%EB%B0%8B-%EB%A9%94%EC%8B%9C%EC%A7%80-%ED%85%9C%ED%94%8C%EB%A6%BF
+
+
+[저장공간]
+- 실제 공간 / stage / git direc
+
+
+
+[staging]
+git add -A (지양)
+git add 파일명
+
+git rm --cached *
+
+.gitignore 로 staging 컨트롤
+
+git status
+
+git diff ---> staging된것들이 어던것들이 수정되었는지 확인 
+
+
+
+
+[git direc]
+git comit -m "메세지"
+	-> .gitmessage.txt 가 지정되어있으면
+	-> 그냥 git commit 만 쓰기
+
+git reset log_code(6-digits)(돌아갈 과거 로그) --hard
+	-> 해당 코드 보다 위쪽에 있는 로그는 다 삭제
+
+git revert log_code(6-digits)(취소할 시점)
+	-> :wq (w-> 저장 / q-> 종료)
+            *** 이전 로그로 돌아가는것이 아닌, 하나의 새로운 로그로 남기면서 돌아간것임
+	-> 그래서 reset으로 
+
+
+
+[branch]
+- branch는 생성 또는 이동 후에, add / commit을 해줘야지 하나의 로그로 남는다
+git branch branch_name
+	-> 브랜치 생성(브랜치 생성 시점을 기준으로, 있던 로그를 복사해서 새로운 브랜치 생성)
+
+git checkout branch_name 
+	-> 해당 이름의 브랜치로 이동
+
+git branch -D branch_name
+	-> 다 쓴 branch 삭제
+
+[merge]
+# merge 할것을 : B (from)
+# merge 할것을 가져와서 합쳐질 공간을 : A (to) 
+# 라고 할때,
+ 
+git checkout A
+git merge B
+
+이렇게 해주면됨 (윈도우 경우에는 vi 화면 나옴 -> :wq)
+
+
+[conflict]
+- 애초에 branch의미단위를 잘 나누어서 같은 파일을 서로 다른 branch에서 수정하지 않도록 해야됨
+
+- conflict 발생시!
+	-> git merge B 했을때, 
+	-> conflict 된 부분을 보여줌 
+	-> A, B 둘중 한군데를 수정후 comit 
+		-> 이때는 git comit만 해주기
+
+
+[rebase] (재배치)
+- git rebase B
+	-> merge와 같이 branch들을 합쳐줌
+	-> 단 하나 다른점은 git log --decorate --graph 를 깔끔하게 한줄로 만들어줌
+	-> 팀 별 정책에따라서 의논후 입력
+
+
+=============================================
+[github 연동]
+- github에 repository 생성
+
+- git status 
+	-> 다 comit되어있는지 확인
+- git remote
+	-> 현재 지정된 원격 repository가 있는지 확인
+- git remote add origin github원격저장소주소
+	-> origin이라는 이릉으로 원격 저장소 지정
+- git push origin master
+	-> origin 이라는 원격저장소에 master이라는 branch를 올리겠다
+- git pull origin
+===============================================
+[remote 관련! / Fetch / Push / Pull]
+-remote 변경시
+	-> git remote -v : 현재 remote 지정된것 확인
+	-> git remote remove remote_name
+	-> git remote add remote_name 깃주소
+
+- git fetch 
+	- push 하기전에 현재 git directory가 최신인지확인
+
+- git push origin master
+	- origin 이라는 remote repository(github)으로 master이라는 브랜치를 올리겠다
+
+- git pull origin master
+	- origin 이라는 remote repository(github)의 master이라는 브랜치의 내용을 받아오겠다
+
