@@ -1,1 +1,1 @@
-[Markdown 문법](https://gist.github.com/ihoneymon/652be052a0727ad59601, "markdown link")
+참고 링크 : <https://gist.github.com/ihoneymon/652be052a0727ad59601>
