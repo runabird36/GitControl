@@ -16,17 +16,17 @@ git config --global commit.template .gitmessage.txt
 ```
 
 
-## git 저장공간 세가지 + 알파 구분
+#### git 저장공간 세가지 + 알파 구분
 - 실제공간 / stage 가상공간 / git directory / remote 공간 (github)
 
 
-## local / git의 현재 상태 확인
+#### local / git의 현재 상태 확인
 ```
 git status
 ```
 
 
-##  Staging
+####  Staging
 ```
 git add -A (지양)
 git add 파일명
@@ -35,7 +35,7 @@ git add 파일명
 
 
 
-## UnStaging
+#### UnStaging
 - 전체 파일 unstage
 ```
 git reset
@@ -48,12 +48,12 @@ git rm --cached 파일명
 
 
 
-## Filter Staging
+#### Filter Staging
 - .gitignore 파일 안에 지정된 포멧 / 파일 / 폴더 를 제외하고 staging하도록 필터링
 
 
 
-## git directory 컨트롤
+#### git directory 컨트롤
 - git directory에 실제 저장
 - 이때서부터 실제 로그로 남음
 ```
