@@ -3,8 +3,8 @@
 ## [ user name / email 내용 저장 ]
 
 ```
-git config --global user.name "my name"
-git config --global user.email email
+  git config --global user.name "my name"
+  git config --global user.email email
 ```
 
 ## [ commit 메세지 템플릿 저장 ]
@@ -25,14 +25,14 @@ git config --global user.email email
 ## [ local / git의 현재 상태 확인 ]
 
 ```
-git status
+  git status
 ```
 
 ## [ Staging ]
 
 ```
-git add -A (지양)
-git add 파일명
+  git add -A (지양)
+  git add 파일명
 ```
 
 ## [ UnStaging ]
@@ -101,4 +101,40 @@ git add 파일명
   git branch -D branch_name
   ```
 
-# #
+## [ Merge / Conflict / Rebase(재배치) ]
+
+- 전제 1 : merge 할것을 : B (from)
+- 전제 2 : merge 할것을 가져와서 합쳐질 공간을 : A (to)
+- 라고 할때,
+
+- A로 이동 후, B merge
+
+- 이렇게 하면 (윈도우의 경우, vi 화면이 나옴 -> :wq)
+
+  ```
+  git checkout A
+  git merge B
+  ```
+
+- conflict!
+
+- 애초에 branch 의미단위를 잘 나누어서 같은 파일을 서로 다른 branch에서 수정하지 않도록 해야됨
+
+- conflict 발생시!
+
+  ```
+  - git merge B 했을때,
+  - conflict 된 부분을 보여줌
+  - A, B 둘중 한군데를 수정 후, commit
+    - git commit 만 해주기
+  ```
+
+- Rebase
+
+- merge와 같이 지정한 브랜치를 하나로 합쳐줌
+- 단, 하나 다른점은 git log --decorate --graph를 깔금하게 한줄로 만들어줌
+- 팀 별 정책에 따라서 의논후 입력
+
+  ```
+  git rebase B
+  ```
