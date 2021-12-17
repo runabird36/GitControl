@@ -1,4 +1,4 @@
-# git 저장소 초기화 및 config 설정
+# git 명령어 사용방법 / github 연동
 
 ## [ user name / email 내용 저장 ]
 
