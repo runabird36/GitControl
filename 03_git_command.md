@@ -22,6 +22,20 @@
 
 - 실제공간 / stage 가상공간 / git directory / remote 공간 (github)
 
+## [ git directory 로그 확인 방법 ]
+- git log 확인
+  ```
+  git log
+  ```
+- git log를 그래프와 함께 확인
+  ```
+  git log --decorate --graph
+  ```
+- git log를 한줄로 요약해서 확인
+  ```
+  git log --decorate --all --oneline
+  ``` 
+
 ## [ local / git의 현재 상태 확인 ]
 
 ```
