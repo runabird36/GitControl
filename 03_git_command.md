@@ -138,3 +138,55 @@
   ```
   git rebase B
   ```
+
+
+
+## [ remote 명령어 관련! / Fetch / Push / Pull ]
+
+- 원격 저장소 경로를 변경할 때,
+  ```
+  -> git remote -v : 현재 원격저장소를 칭하고 있는 이름(remote_name) 확인 : origin
+  -> git remote remove remote_name : remote_name과 연결된 remote 경로 삭제
+  -> git remote add remote_name 깃주소 : 새롭게 지정할 remote 주소를 연결
+  ```
+
+- push 하기전에 현재 local git directory가 최신인지 확인
+  ```
+  git fetch
+  ```
+
+- origin 이라는 remote repository(github)으로 master이라는 브랜치를 올리겠다.
+  ```
+  git push origin master
+  ```
+
+- origin 이라는 remote repository(github)으로 master이라는 브랜치를 받아오겠다.
+  ```
+  git pull origin master
+  ```
+
+
+
+## [ github 연동 ]
+
+1. github에 repository 생성
+
+2. 현재 로컬 git directory에 모든 내용이 commit되어있는지 확인
+  ```
+  git status
+  ```
+3. 현재 지정된 원격 repository가 있는지 확인 후, 없을 시 지정
+  ```
+  # 현재 지정되어있는 원격 저장소 확인
+  git remote -v
+  # origin 이라는 이름으로 원격 저장소 지정
+  git remote add origin github원격저장소주소
+  ```
+4. origin 이라는 이름으로 지정된 원격 저장소에, master이라는 branch를 올리겠다
+   (현재 main branch가 무엇인지 확인 필요. master 이라는 이름이 아닐수도 있음)
+  ```
+  # 현재 있는 branch 들 확인
+  git branch
+  # git push origin master
+  ```
+5. git pull origin master
