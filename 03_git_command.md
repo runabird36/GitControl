@@ -150,9 +150,13 @@
   -> git remote add remote_name 깃주소 : 새롭게 지정할 remote 주소를 연결
   ```
 
-- push 하기전에 현재 local git directory가 최신인지 확인
+- push 하기전에 현재 local git directory가 최신인지 확인 방법
+- fetch와 pull의 차이 : 둘다 remote로 부터 가져오는것 이지만, 로컬 실제 데이터에 merge를 하냐 안하냐의 차이
+  (pull 은 merge / fetch는 merge X)
   ```
-  git fetch
+  -> git fetch origin : origin 이라는 원격 저장소를 가져오되 merge는 하지 않겠다.
+  -> git log --decorate --all --oneline : 어떠한 내용이 달라졌는지를, log들을 한줄로 정리해서 확인하겠다
+  -> git diff HEAD origin/master : 어떠한 내용이 달라졌는지, 실제 내용을 뜯어보겠다.
   ```
 
 - origin 이라는 remote repository(github)으로 master이라는 브랜치를 올리겠다.
