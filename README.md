@@ -122,6 +122,20 @@
   ```
   git branch -D branch_name
   ```
+- branch list up
+  ```
+  git branch -r # remote 경로의 branch list up
+  git branch -a # 현재 경로의 branch list up
+  ```
+- 현재 사용중인 branch 확인
+  ```
+  git branch -v
+  ```
+- 특정 branch 가져오기
+  ```
+  git pull # 현재 사용중인 branch를 가져오기
+  git pull origin <branch name> # 특정 branch 가져오기
+  ```
 
 ## [ Merge / Conflict / Rebase(재배치) ]
 
