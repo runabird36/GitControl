@@ -230,3 +230,15 @@
   # git push origin master
   ```
 5. git pull origin master
+
+</br>
+
+## [authentification 안내 메세지 이슈]
+- 계정입력
+- token 만든뒤 token 코드를 비밀번호로 입력
+
+</br>
+
+## [default branch 변경]
+- 원격 저장소 : [repository]-[Settings]-[general] 항목에서 변경
+- 로컬 저장소 : git config --global init.defaultBranch 브랜치이름
