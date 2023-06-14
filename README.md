@@ -236,9 +236,13 @@
 ## [authentification 안내 메세지 이슈]
 - 계정입력
 - token 만든뒤 token 코드를 비밀번호로 입력
+- [참고자료](https://webisfree.com/2017-05-19/git-%EC%95%84%EC%9D%B4%EB%94%94-%ED%8C%A8%EC%8A%A4%EC%9B%8C%EB%93%9C-%EC%9E%85%EB%A0%A5-%EC%95%88%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95)
+
+
 
 </br>
 
 ## [default branch 변경]
 - 원격 저장소 : [repository]-[Settings]-[general] 항목에서 변경
 - 로컬 저장소 : git config --global init.defaultBranch 브랜치이름
+- [참고자료](https://earth-95.tistory.com/86)
