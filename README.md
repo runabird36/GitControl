@@ -5,6 +5,10 @@
 4. Git 내부 규약 : <https://github.com/runabird36/GitControl/blob/master/docs/04_git_%EA%B4%B8%EB%A6%AC%EA%B7%9C%EC%95%BD.md>
 
 
+</br>
+</br>
+</br>
+
 
 # git 명령어 사용방법 / github 연동
 
@@ -14,6 +18,8 @@
   git config --global user.name "my name"
   git config --global user.email email
 ```
+
+</br>
 
 ## [ commit 메세지 템플릿 저장 ]
 
@@ -26,9 +32,13 @@
   git config --global commit.template .gitmessage.txt
   ```
 
+</br>
+
 ## [ git 저장공간 세가지 + 알파 구분 ]
 
 - 실제공간 / stage 가상공간 / git directory / remote 공간 (github)
+
+</br>
 
 ## [ git directory 로그 확인 방법 ]
 - git log 확인
@@ -44,11 +54,15 @@
   git log --decorate --all --oneline
   ```
 
+</br>
+
 ## [ local / git의 현재 상태 확인 ]
 
 ```
   git status
 ```
+
+</br>
 
 ## [ Staging ]
 
@@ -56,6 +70,8 @@
   git add -A (지양)
   git add 파일명
 ```
+
+</br>
 
 ## [ UnStaging ]
 
@@ -74,6 +90,8 @@
 ## [ Filter Staging ]
 
 - .gitignore 파일 안에 지정된 포멧 / 파일 / 폴더 를 제외하고 staging하도록 필터링
+
+</br>
 
 ## [ git directory 컨트롤 ]
 
@@ -100,6 +118,8 @@
   ```
   git revert log_code(6-digits)(취소할 시점)
   ```
+
+</br>
 
 ## [ Branch 컨트롤 ]
 
@@ -136,6 +156,8 @@
   git pull # 현재 사용중인 branch를 가져오기
   git pull origin <branch name> # 특정 branch 가져오기
   ```
+
+</br>
 
 ## [ Merge / Conflict / Rebase(재배치) ]
 
@@ -175,7 +197,7 @@
   git rebase B
   ```
 
-
+</br>
 
 ## [ remote 명령어 관련! / Fetch / Push / Pull ]
 
@@ -205,7 +227,7 @@
   git pull origin master
   ```
 
-
+</br>
 
 ## [ github 연동 ]
 
@@ -236,6 +258,7 @@
 ## [authentification 안내 메세지 이슈]
 - 계정입력
 - token 만든뒤 token 코드를 비밀번호로 입력
+- 매번 패스워드 입력안하는 방법 : git config credential.helper store
 - [참고자료](https://webisfree.com/2017-05-19/git-%EC%95%84%EC%9D%B4%EB%94%94-%ED%8C%A8%EC%8A%A4%EC%9B%8C%EB%93%9C-%EC%9E%85%EB%A0%A5-%EC%95%88%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95)
 
 
@@ -246,3 +269,16 @@
 - 원격 저장소 : [repository]-[Settings]-[general] 항목에서 변경
 - 로컬 저장소 : git config --global init.defaultBranch 브랜치이름
 - [참고자료](https://earth-95.tistory.com/86)
+
+
+</br>
+
+## [.gitignore 가 반영되지 않을때]
+1. 아래의 명령어로 캐쉬 삭제 후, 다시 commit
+```
+git rm -r --cached .
+git add .
+git commit -m "fixed untracked files"
+```
+
+- [참고자료](https://jojoldu.tistory.com/307)
