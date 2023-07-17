@@ -282,3 +282,25 @@ git commit -m "fixed untracked files"
 ```
 
 - [참고자료](https://jojoldu.tistory.com/307)
+
+</br>
+
+## [ Authentication 에러 발생할때 ]
+- 토큰 발급해서 비밀번호란에 입력
+- ID는 깃 ID 그대로 사용
+
+</br>
+
+## [ Git ID/PW(Access-token) 매번 입력에서 벗어나기 ]
+- [참고자료](https://tomatohj.tistory.com/20)
+1. Credential 어보를 반영구 저장하는 방식
+```
+git config --unset credential.helper 
+git config credential.helper store
+```
+2. Credential 정보를 특정 시간동한 git caceh에 임시로 저장하는 방식
+```
+git config --unset credential.helper 
+git config credential.helper cache
+git config credential.helper 'cache --timeout 7200'
+```
