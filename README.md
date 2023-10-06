@@ -78,13 +78,13 @@
 - 전체 파일 unstage
 
   ```
-  git reset
+  git reset HEAD
   ```
 
 - 지정된 파일 unstage
 
   ```
-  git rm --cached 파일명
+  git reset HEAD [file]
   ```
 
 ## [ Filter Staging ]
