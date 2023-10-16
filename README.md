@@ -75,16 +75,18 @@
 
 ## [ UnStaging ]
 
-- 전체 파일 unstage
+- Stage area --> Working Directory
 
   ```
-  git reset HEAD
+  git restore --staged (file name)
   ```
 
-- 지정된 파일 unstage
+
+
+- cf ) reset은 repository --> Stage area 이다!!
 
   ```
-  git reset HEAD [file]
+  git reset HEAD [file]  # Stage area로 이동
   ```
 
 ## [ Filter Staging ]
@@ -134,7 +136,7 @@
 - 해당 이름의 브랜치로 이동
 
   ```
-  git checkout branch_name
+  git switch branch_name
   ```
 
 - 다 쓴 브랜치 삭제
